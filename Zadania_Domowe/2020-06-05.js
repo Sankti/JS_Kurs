@@ -16,9 +16,6 @@ function silniaCB(poziom, callback) {
 
     callback(wynik);
 }
-
-console.log("silniaCB");
-
 function counter() {
     let a = 1;
     return function () {
@@ -32,19 +29,27 @@ function print(val) {
     console.log(val);
 }
 
-function kolbek() {
+function silniaWlasciwa() {
     let poziom = count();
     silniaCB(poziom, print);
 }
 
-kolbek();
-kolbek();
-kolbek();
-kolbek();
 
-console.log("-----")
 
 // Zadanie 2: Super Sum - funkcja dodająca kolejno podane argumenty
+function superSumGen(...numbers) {
+    let wynik = 0;
+
+    return function (...numbers) {
+        liczby = numbers;
+        liczby.forEach(function(value) {
+            wynik = wynik + value;
+        })
+        console.log(wynik)
+    }
+}
+
+let superSum = superSumGen();
 
 
 
@@ -58,9 +63,7 @@ function silniaRekurencja(n) {
     }
 }
 
-console.log(silniaRekurencja(8))
-console.log(silniaRekurencja(9))
-console.log(silniaRekurencja(10))
+
 
 // Zadanie: E-Dziennik
 let classes = [
@@ -83,9 +86,3 @@ function pobierzOsobe(classNo, studentNo) {
     properStudentNo = studentNo - 1;
     return classes[properClass][properStudentNo];
 }
-
-// Testing
-dodajOsobe(2, "Charles")
-dodajOsobe(2, "Andrei")
-console.log(classes)
-console.log(pobierzOsobe(2, 1))
