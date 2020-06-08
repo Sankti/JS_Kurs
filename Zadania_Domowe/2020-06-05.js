@@ -16,6 +16,7 @@ function silniaCB(poziom, callback) {
 
     callback(wynik);
 }
+
 function counter() {
     let a = 1;
     return function () {
@@ -37,7 +38,7 @@ function silniaWlasciwa() {
 
 
 // Zadanie 2: Super Sum - funkcja dodająca kolejno podane argumenty
-function superSumGen(...numbers) {
+function superSumGen() {
     let wynik = 0;
 
     return function (...numbers) {
