@@ -87,3 +87,36 @@ function pobierzOsobe(classNo, studentNo) {
     properStudentNo = studentNo - 1;
     return classes[properClass][properStudentNo];
 }
+
+
+
+// // ROZWIĄZANIA PODANE NA ZAJĘCIACH
+
+// // Rozwiązanie zadania 1:
+// function generujSilnie() {
+//     let licznik = 0;
+//     let wynik = 1;
+//     wynik = wynik * licznik;
+
+//     return function() {
+//         licznik = licznik + 1;
+//         console.log(licznik, wynik);
+//     }
+// }
+
+// let silnia = generujSilnie();
+// console.log(typeof silnia);
+
+// // Rozwiązanie zadania 2:
+// function genSum() {
+//     let wynik = 0;
+//     const subsum =  function(...rest) {
+//         for (let i = 0; i < rest.length; i++) {
+//             wynik = wynik + rest[i];
+//         }
+//         console.log(wynik);
+//         return subsum;
+//     }
+//     return subsum;
+// }
+// let superSum = genSum();
