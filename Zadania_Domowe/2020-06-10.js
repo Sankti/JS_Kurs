@@ -7,15 +7,12 @@ class Car {
         this.name = name;
         this.handler = null;
     }
-
     engine() {
         console.log("Wrr!")
     }
-
     startEngine() {
         this.handler = setInterval(this.engine, 1000);
     }
-
     stopEngine() {
         clearInterval(this.handler);
     }
@@ -35,3 +32,16 @@ function giveEvens(n) {
     }
 }
 giveEvens(12);
+
+
+
+// Zadanie 2: Funkcja dzieląca argumenty na 3 tablice w formie tablicy 2d:
+//            fajnaFunc(1,2,3,4,5,6) => [[1,4],[2,5],[3,6]]
+function arrayMaker(a, b, c, d, e, f) {
+    let solution = []
+    solution.push([a, d]);
+    solution.push([b, e]);
+    solution.push([c, f]);
+    console.log(solution);
+}
+arrayMaker(1,2,3,4,5,6);
