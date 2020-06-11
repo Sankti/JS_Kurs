@@ -37,11 +37,23 @@ giveEvens(12);
 
 // Zadanie 2: Funkcja dzieląca argumenty na 3 tablice w formie tablicy 2d:
 //            fajnaFunc(1,2,3,4,5,6) => [[1,4],[2,5],[3,6]]
-function arrayMaker(a, b, c, d, e, f) {
-    let solution = []
-    solution.push([a, d]);
-    solution.push([b, e]);
-    solution.push([c, f]);
+function every(arr, interval = 1, start = 0) {
+    let imported = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (i % interval === 0) {
+        imported.push(arr[i + start]);
+      }
+    }
+    solution = imported.filter(arg => arg != undefined)
+    return solution;
+  }
+
+function arrayMaker(...args) {
+    let solution = [];
+    let array1 = every(args, 3, 0);
+    let array2 = every(args, 3, 1);
+    let array3 = every(args, 3, 2);
+    solution.push(array1, array2, array3);
     console.log(solution);
 }
 arrayMaker(1,2,3,4,5,6);
