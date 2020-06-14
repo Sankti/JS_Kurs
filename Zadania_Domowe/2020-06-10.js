@@ -57,3 +57,26 @@ function arrayMaker(...args) {
     console.log(solution);
 }
 arrayMaker(1,2,3,4,5,6);
+
+
+
+// Zadanie 3: Funkcja, która wyświetli N-ty wyraz ciągu
+function sequenceBase(n) {
+    return n + 1;
+}
+function sequence(n) {
+    if (n < 3) {
+        solution = n + 1;
+    } else {
+    solution = sequenceBase(n-1) * n + sequenceBase(n-2)/sequenceBase(n-3);
+    }
+    return solution;
+}
+
+// Testing
+console.log(sequence(0));
+console.log(sequence(1));
+console.log(sequence(2));
+console.log(sequence(3));
+console.log(sequence(4));
+console.log(sequence(12));
