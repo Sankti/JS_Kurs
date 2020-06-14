@@ -80,3 +80,63 @@ console.log(sequence(2));
 console.log(sequence(3));
 console.log(sequence(4));
 console.log(sequence(12));
+
+
+
+// Zadanie 4: Funkcja, która doda/usunie/wyświetli osobę z tablicy obiektów
+function Person(id, name, surname) {
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+}
+masterSheet = []
+function dodajOsobe(id, name, surname) {
+    osoba = new Person(id, name, surname);
+    masterSheet[id] = osoba;
+    console.log(osoba);
+}
+function usunOsobe(id) {
+    masterSheet.splice(id, 1);
+}
+
+// Testing
+console.log(masterSheet);
+dodajOsobe(2, "Zbigniew", "Szrapnel");
+dodajOsobe(12, "Łukasz", "Łój");
+dodajOsobe(18, "Mariusz", "Poniedzielny");
+usunOsobe(12);
+console.log(masterSheet);
+
+
+
+// Zadanie 5: Obiekt, który po N sekund wyświetli alert, który można anulować
+function Alert(id, text, time) {
+    this.id = id;
+    this.text = text;
+    this.time = time;
+}
+
+const alertBase = {
+    alerts: [],
+    handler: null,
+
+    wyswietlAlert(id, text, time) {
+        this.alerts[id] = new Alert(id, text, time);
+
+        this.handler = setTimeout(
+            function() {
+            console.log(alertBase.alerts[id].text);
+            }, alertBase.alerts[id].time
+        );
+    },
+
+    anulujAlert(id) {
+        this.alerts.splice(id, 1);
+        clearTimeout(this.handler);
+    }
+}
+
+// Testing
+alertBase.wyswietlAlert(3, "Cześć.", 3000);
+alertBase.anulujAlert(3);
+console.log(alertBase.alerts);
