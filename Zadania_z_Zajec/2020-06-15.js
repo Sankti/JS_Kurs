@@ -28,3 +28,39 @@ var handler = setInterval(function () {
 }, 1000)
 
 document.body.appendChild(square);
+
+
+
+// Zadanie 3: Lista 5 elementów i ich modyfikacje
+var items = document.createElement('p');
+for (var i = 0; i < 5; i++) {
+    var przycisk = document.createElement('p');
+    przycisk.appendChild(document.createTextNode('Paragraf' + (i + 1)));
+    
+    items.appendChild(przycisk);
+}
+document.body.appendChild(items);
+
+let paragraphs = document.querySelectorAll("p");
+
+paragraphs[0].style.color = "maroon";
+paragraphs[2].style.color = "magenta";
+paragraphs[paragraphs.length - 1].style.color = "purple";
+
+
+
+// Zadanie 4: Dodanie diva o wymiarach 100x100, który zmienia kolor gdy w niego klikniemy
+let squarePushable = document.createElement('div');
+squarePushable.style.height = "100px";
+squarePushable.style.width = "100px";
+squarePushable.style.backgroundColor = "beige";
+
+function pushSquare() {
+    if (squarePushable.style.backgroundColor === "beige") {
+        squarePushable.style.backgroundColor = "maroon";
+    } else if (squarePushable.style.backgroundColor === "maroon") {
+        squarePushable.style.backgroundColor = "beige";
+    }
+}
+squarePushable.addEventListener("click", pushSquare);
+document.body.appendChild(squarePushable);
