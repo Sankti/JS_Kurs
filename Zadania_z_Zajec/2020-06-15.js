@@ -64,3 +64,15 @@ function pushSquare() {
 }
 squarePushable.addEventListener("click", pushSquare);
 document.body.appendChild(squarePushable);
+
+
+
+// Zadanie 5: Po wpisaniu tekstu w input (blur), pokaż alert (wartość z inputa)
+let box = document.createElement('input');
+box.setAttribute("type", "text");
+
+function alertInput() {
+    alert(box.value);
+}
+box.addEventListener("blur", alertInput());
+document.body.appendChild(box);
