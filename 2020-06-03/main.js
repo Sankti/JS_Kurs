@@ -728,4 +728,215 @@
 
 
 
-// Zadanie 3: Funkcja, która wyświetli N-ty wyraz ciągu
+// // Zadanie 3: Funkcja, która wyświetli N-ty wyraz ciągu
+// function sequenceBase(n) {
+//     return n + 1;
+// }
+// function sequence(n) {
+//     if (n < 3) {
+//         solution = n + 1;
+//     } else {
+//     solution = sequenceBase(n-1) * n + sequenceBase(n-2)/sequenceBase(n-3);
+//     }
+//     return solution;
+// }
+
+// // Testing
+// console.log(sequence(0));
+// console.log(sequence(1));
+// console.log(sequence(2));
+// console.log(sequence(3));
+// console.log(sequence(4));
+// console.log(sequence(12));
+
+
+
+// // Zadanie 4: Funkcja, która doda/usunie/wyświetli osobę z tablicy obiektów
+// function Person(id, name, surname) {
+//     this.id = id;
+//     this.name = name;
+//     this.surname = surname;
+// }
+// masterSheet = []
+// function dodajOsobe(id, name, surname) {
+//     osoba = new Person(id, name, surname);
+//     masterSheet[id] = osoba;
+//     console.log(osoba);
+// }
+// function usunOsobe(id) {
+//     masterSheet.splice(id, 1);
+// }
+
+// // Testing
+// console.log(masterSheet);
+// dodajOsobe(2, "Zbigniew", "Szrapnel");
+// dodajOsobe(12, "Łukasz", "Łój");
+// dodajOsobe(18, "Mariusz", "Poniedzielny");
+// usunOsobe(12);
+// console.log(masterSheet);
+
+
+
+// // Zadanie 5: Obiekt, który po N sekund wyświetli alert, który można anulować
+// function Alert(id, text, time) {
+//     this.id = id;
+//     this.text = text;
+//     this.time = time;
+// }
+
+// const alertBase = {
+//     alerts: [],
+//     handler: null,
+
+//     wyswietlAlert(id, text, time) {
+//         this.alerts[id] = new Alert(id, text, time);
+
+//         this.handler = setTimeout(
+//             function() {
+//             console.log(alertBase.alerts[id].text);
+//             }, alertBase.alerts[id].time
+//         );
+//     },
+
+//     anulujAlert(id) {
+//         this.alerts.splice(id, 1);
+//         clearTimeout(this.handler);
+//     }
+// }
+
+// // Testing
+// alertBase.wyswietlAlert(3, "Cześć.", 3000);
+// alertBase.anulujAlert(3);
+// console.log(alertBase.alerts);
+
+
+
+// // 15.06.2020
+// const element = document.querySelector("#foo");
+// console.log(element);
+
+// function onClick(event) {
+//     console.log("Success.")
+// }
+
+// element.addEventListener('click', onClick);
+
+// // Zadanie 1: Dodanie 5 przycisków do body przy użyciu JS
+// function przycisniecie() {
+//     console.log("Przyciśnięto!")
+// }
+// var container = document.createElement('div');
+// for (var i = 0; i < 5; i++) {
+//     var przycisk = document.createElement('p');
+//     przycisk.appendChild(document.createTextNode('Przycisk' + (i + 1)));
+//     przycisk.addEventListener("click", przycisniecie);
+//     container.appendChild(przycisk);
+// }
+// document.body.appendChild(container);
+
+
+
+// // Zadanie 2: Dodanie diva o wymiarach 100x100, który zmienia kolor co jakiś czas
+// let square = document.createElement('div');
+// square.style.height = "100px";
+// square.style.width = "100px";
+// square.style.backgroundColor = "beige";
+
+// var handler = setInterval(function () {
+//     if (square.style.backgroundColor === "beige") {
+//         square.style.backgroundColor = "maroon";
+//     } else if (square.style.backgroundColor === "maroon") {
+//         square.style.backgroundColor = "beige";
+//     }
+// }, 1000)
+
+// document.body.appendChild(square);
+
+
+
+// // Zadanie 3: Lista 5 elementów i ich modyfikacje
+// var items = document.createElement('p');
+// for (var i = 0; i < 5; i++) {
+//     var przycisk = document.createElement('p');
+//     przycisk.appendChild(document.createTextNode('Paragraf' + (i + 1)));
+    
+//     items.appendChild(przycisk);
+// }
+// document.body.appendChild(items);
+
+// let paragraphs = document.querySelectorAll("p");
+
+// paragraphs[0].style.color = "maroon";
+// paragraphs[2].style.color = "magenta";
+// paragraphs[paragraphs.length - 1].style.color = "purple";
+
+
+
+// // Zadanie 4: Dodanie diva o wymiarach 100x100, który zmienia kolor gdy w niego klikniemy
+// let squarePushable = document.createElement('div');
+// squarePushable.style.height = "100px";
+// squarePushable.style.width = "100px";
+// squarePushable.style.backgroundColor = "beige";
+
+// function pushSquare() {
+//     if (squarePushable.style.backgroundColor === "beige") {
+//         squarePushable.style.backgroundColor = "maroon";
+//     } else if (squarePushable.style.backgroundColor === "maroon") {
+//         squarePushable.style.backgroundColor = "beige";
+//     }
+// }
+// squarePushable.addEventListener("click", pushSquare);
+// document.body.appendChild(squarePushable);
+
+
+
+// // Zadanie 5: Po wpisaniu tekstu w input (blur), pokaż alert (wartość z inputa)
+// let box = document.createElement('input');
+// box.setAttribute("type", "text");
+
+// function alertInput() {
+//     alert(box.value);
+// }
+// box.addEventListener("blur", alertInput());
+// document.body.appendChild(box);
+
+
+
+// Zadania z dnia 15.06.2020
+// Adam Goździelewski
+
+// Zadanie: 3 przyciski, które zliczają swoje kliknięcia oraz całkowitą ilość kliknięć
+
+
+makeButton = () => {
+let button = document.createElement("div");
+    button.classList.add("button");
+    button.style.width = "250px";
+    button.style.height = "250px";
+    button.style.backgroundColor = "maroon";
+
+    pushButton = () => {
+        console.log("Wduszono przycisk.")
+    }
+
+    button.addEventListener("click", pushButton);
+    document.body.appendChild(button);
+
+
+    let buttons = document.querySelector('.button');
+
+    let textbox = document.createElement("p");
+    textbox.innerHTML = "Love";
+    buttons.appendChild(textbox);
+}
+
+makeButton();
+makeButton();
+
+// makeButtons = (count) => {
+//     for (i=0; i < count; i++) {
+//         document.body.appendChild(button);
+//     }
+// }
+
+// makeButtons(3);
