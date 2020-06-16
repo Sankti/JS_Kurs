@@ -55,6 +55,11 @@ let button = document.createElement("button");
     button.addEventListener("click", pushButton);
 }
 
-makeMasterDiv();
-makeButton();
-makeButton();
+makeButtons = (amount) => {
+    makeMasterDiv();
+    for (i=0; i<amount; i++) {
+        makeButton();
+    }
+}
+
+makeButtons(3);
