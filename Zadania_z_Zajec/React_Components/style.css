@@ -1,0 +1,6 @@
+.grid-wrapper {
+    display: flex;
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-bottom: 50vh;
+  }
