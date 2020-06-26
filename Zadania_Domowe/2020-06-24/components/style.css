@@ -1,0 +1,86 @@
+/* .goblin-tile {
+    width: 250px;
+    height: 250px;
+    background-color: lavender;
+    margin: 10px;
+}
+
+.goblin-tile > img {
+    max-width: 75%;
+} */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    height: 50vh;
+}
+
+.container-rows {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    height: 50vh;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-top: 10vh;
+}
+
+img {
+    float: none;
+    margin: auto;
+    height: 200px;
+}
+
+.thumbnail > img {
+    float: left;
+    margin: 0px 15px 15px 0px;
+    height: 200px;
+}
+
+.thumbnail {
+    width: 40vw;
+}
+
+.right-bar {
+    width: 20vw;
+}
+
+.zone {
+    color: #f3f3f3;
+    font-size: 2em;
+    border-radius: 4px;
+    background-color: #1A1117;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    font-size: 0.5em;
+    margin: 0;
+}
+
+li {
+    padding: 20px;
+    margin-right: 10px
+}
+
+.left-margin {
+    margin-left: 100px;
+    max-width: 20vw;
+}
